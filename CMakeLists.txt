@@ -1,4 +1,6 @@
 cmake_minimum_required(VERSION 3.14)
+cmake_policy(SET CMP0135 NEW)
+cmake_policy(SET CMP0115 NEW)
 project(Labs)
 
 # GoogleTest requires at least C++14
@@ -18,4 +20,6 @@ FetchContent_MakeAvailable(googletest)
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 
 add_subdirectory(Landscaping)
-add_subdirectory(ConsoleApp)
+add_subdirectory(ConsoleAppProject)
+add_subdirectory(GoogleTestProject)
+add_subdirectory(FunctionsPointers)

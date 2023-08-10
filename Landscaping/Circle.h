@@ -1,47 +1,43 @@
 #pragma once
 #include <string>
-#include <numbers>
-#include "Color.h" 
+#include "Color.h"
+#include "NotImplementedException.h"
 
-//constexpr double PI = 3.141592653589;
 class Circle
 {
 public:
 	Circle() {}
 
 	Circle(float radius, std::string name, Color color)
-		:color(color), name(name)
 	{
-		SetRadius(radius);
+		throw NotImplementedException();
 	}
-	float Radius() const { return radius; }
-	std::string Name() const { return name; }
-	Color GetColor() const { return color; }
+
+	float Radius() const { throw NotImplementedException(); }
+	std::string Name() const { throw NotImplementedException(); }
+	Color GetColor() const { throw NotImplementedException(); }
 	void SetRadius(float radius)
 	{
-		this->radius = radius;
+		throw NotImplementedException();
 	}
 	void SetName(std::string name)
 	{
-		this->name = name;
+		throw NotImplementedException();
 	}
 	void SetColor(Color color)
 	{
-		this->color = color;
+		throw NotImplementedException();
 	}
 
 	float Area()
 	{
-		return Radius() * Radius() * std::numbers::pi;
+		throw NotImplementedException();
 	}
 	float Perimeter()
 	{
-		return Radius() * 2 * std::numbers::pi;
+		throw NotImplementedException();
 	}
 
 private:
-	std::string name;
-	Color color;
-	float radius;
-};
 
+};
