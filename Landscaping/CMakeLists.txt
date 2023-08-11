@@ -8,7 +8,7 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 enable_testing()
 
 add_executable(
-  landscaping
+  Landscaping
   Color.cpp
   Circle.cpp
   Rectangle.cpp
@@ -18,9 +18,9 @@ add_executable(
 )
 
 target_link_libraries(
-  landscaping
+  Landscaping
   GTest::gtest_main
 )
 
 include(GoogleTest)
-gtest_discover_tests(landscaping)
+gtest_discover_tests(Landscaping)

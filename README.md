@@ -5,7 +5,7 @@ This repository contains the code for the course Intermediate C++ by Chuck McCul
 
 If you are using the Remote Learning System (RLS), the repository has already been downloaded and installed on the RLS.  You can skip to the section on Visual Studio Code.  If you are using your own computer, you can download the repository from GitHub as a zip file or you can download the repository using git.  See the section on Git for more information.
 
-This repository requires a C++ compiler compatible with C++20. The code was tested on Windows and Ubuntu.  
+This repository requires a C++ compiler compatible with C++20. The code was tested with MSVC and G++.  
 
 The student will need any of these compilers to build the code:
 
@@ -21,8 +21,7 @@ Linux:
 Other compilers may work but have not been tested.
 
 ## Building the code
-The source includes *CMakeLists.txt* which is used by CMAKE to create makefiles for the projects.  The student can use CMAKE to create the makefiles and then use the makefiles to build the code.  The student can also use CMAKE to create a Visual Studio solution file and use Visual Studio to build the code.  
-
+The source includes *CMakeLists.txt* which is used by CMAKE to create makefiles for the projects.  The student can use CMAKE to create the makefiles and then use the makefiles to build the code.  
 Visit (cmake.org)[https://cmake.org] for more information on CMAKE.  Install cmake on your system before proceeding.
 
 ## Visual Studio Code
