@@ -11,6 +11,8 @@ public:
 		//...
 	}
 	void operator()(string txt) { Parse(txt); }
+	Parser& operator ++() { return *this; }  // prefix
+	void operator ++(int) { } // postfix
 };
 
 int main()
@@ -18,4 +20,6 @@ int main()
 	Parser myparser;
 	myparser.Parse("text");
 	myparser("alternative");
+	++myparser;
+	myparser++;
 }
