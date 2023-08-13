@@ -15,16 +15,10 @@ public:
 		return d;
 	}
 	friend class Cat;
-
 private:
 	string name;
 };
-// Dog MakeDog(string name)
-// {
-// 	Dog d;
-// 	d.name = name;
-// 	return d;
-// }
+Dog MakeDog(string name);
 
 class Cat
 {
@@ -34,5 +28,5 @@ public:
 
 int main()
 {
-	MakeDog("");
+	auto d = MakeDog("");
 }
