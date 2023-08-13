@@ -1,8 +1,15 @@
 #include <iostream>
+#include <vector>
 #include "module1.h"
 #include "module2.h"
 
 using namespace std;
+
+class Dog {};
+
+using DogList = vector<Dog>;
+
+DogList mydogs;
 
 //create a main hello world function
 int main()
