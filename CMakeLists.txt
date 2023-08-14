@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.14)
 
+# cmake_policy(SET CMP0135 NEW) ########   uncomment on MSYS
 cmake_policy(SET CMP0115 NEW)
 project(Labs)
 
