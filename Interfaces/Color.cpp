@@ -1,5 +1,5 @@
 #include <iostream>
-#include "color.h"
+#include "Color.h"
 namespace training::utility
 {
     Color Color::RED(255, 0, 0);

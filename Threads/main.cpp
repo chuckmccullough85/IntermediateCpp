@@ -4,15 +4,16 @@
 
 using namespace std;
 
-filesystem::file_time_type lastTime;
+
 void Monitor(string path)
 {
+    filesystem::file_time_type lastTime;
     while (true)
     {
         filesystem::file_time_type time = filesystem::last_write_time(path);
         if (time != lastTime)
         {
-            cout << "File changed" << endl;
+             cout << "File changed " << path << endl;
             lastTime = time;
             for (auto file : filesystem::directory_iterator(path))
             {
