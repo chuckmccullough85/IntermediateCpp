@@ -1,5 +1,6 @@
 #include <iostream>
 #include <gtest/gtest.h>
+#include <stdexcept>
 #include "../Color.h"
 
 using namespace std;
@@ -41,12 +42,25 @@ namespace training::utility::tests
         Color c1(1, 2, 250);
         Color c2(3, 2, 20);
         Color result;
-        result = c1 + c2;   
+        result = c1 + c2; //  c1 -> int,  c2 -> int  add the ints,  create a color(int)
         ASSERT_EQ(result.Rgb(), 0x0404FF);
     }
 
     TEST_F(ColorTest, ColorStream)
     {
         cout << c1 << endl;
+    }
+
+    TEST_F(ColorTest, InvalidRed) 
+    {
+        ASSERT_THROW(c1.SetRed(-5), std::invalid_argument);
+    }
+    TEST_F(ColorTest, InvalidGreen)
+    {
+        ASSERT_THROW(c1.SetGreen(-5), std::invalid_argument);
+    }
+    TEST_F(ColorTest, InvalidBlue)
+    {
+        ASSERT_THROW(c1.SetBlue(270), std::invalid_argument);
     }
 }

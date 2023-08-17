@@ -49,7 +49,8 @@ int main(int argc, char* argv[])
         auto result = f.get();
         cout << "File " << result.first << " converted " << result.second << " characters" << endl;
     }
-    cout << "Elapsed time: " << chrono::duration_cast<chrono::milliseconds>(chrono::steady_clock::now() - start).count() << "ms" << endl;
+    cout << "Elapsed time: " << chrono::duration_cast<chrono::milliseconds>(chrono::steady_clock::now() - start).count() 
+         << "ms" << endl;
 
     return 0;
 }

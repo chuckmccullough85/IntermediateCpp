@@ -61,4 +61,4 @@ add_subdirectory(Solutions/InheritanceSolution)
 add_subdirectory(Solutions/InterfaceSolution)
 add_subdirectory(Solutions/ExceptionSolution)
 add_subdirectory(Solutions/ContainerSolution)
-
+add_subdirectory(Solutions/ForEachSolution)
