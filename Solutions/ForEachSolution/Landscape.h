@@ -5,6 +5,7 @@
 #include <concepts>
 #include <numeric>
 #include "Measurable.h"
+#include <algorithm>
 
 namespace training::landscape
 {
