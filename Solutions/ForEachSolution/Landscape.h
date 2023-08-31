@@ -39,24 +39,10 @@ namespace training::landscape
         
         float Perimeter() const
         {
-            bool bigones = std::any_of(shapes.begin(), shapes.end(), 
-                []( auto m) {
-                    return m->Area() > 1000;
-            });
-            auto results = std::transform(shapes.begin(), shapes.end(), 
-                [](auto m) {
-                    return m->Area();
-            });
-
-
-            return std::reduce(shapes.begin(), shapes.end(), 0.0f,
+            return std::accumulate(shapes.begin(), shapes.end(), 0.0f,
                 [](float total, const Measurable *m) {
                     return total + m->Perimeter();
             });
-            // return std::accumulate(shapes.begin(), shapes.end(), 0.0f,
-            //     [](float total, const Measurable *m) {
-            //         return total + m->Perimeter();
-            // });
         }
 
     private:
