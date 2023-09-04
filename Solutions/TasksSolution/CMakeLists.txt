@@ -1,4 +1,4 @@
-set (this Templates20)
+set (this TasksSolution)
 set (headers
   #list headers here
 )

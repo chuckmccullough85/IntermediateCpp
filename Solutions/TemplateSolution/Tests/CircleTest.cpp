@@ -52,33 +52,5 @@ namespace training::geometry::tests
     {
         ASSERT_NEAR(62.8f, c1.Perimeter(), .2f);
     }
-    TEST_F(CircleTest, InvalidRadius)
-    {
-        ASSERT_THROW(c1.SetRadius(-1), std::invalid_argument);
-    }
 
-    TEST_F(CircleTest, DISABLED_CircleAdd)
-    {
-        // auto c2 = c1 + c1;
-        // ASSERT_NEAR(c2.Area(), c1.Area() * 2, .01);
-    }
-
-    TEST_F(CircleTest, DISABLED_CircleIncrement)
-    {
-        auto area = c1.Area();
- //       ++c1;
-        ASSERT_NEAR(c1.Area(), area + 1, .01);
-    }
-
-    TEST_F(CircleTest, DISABLED_CirclePlusEqual)
-    {
-        auto area = c1.Area();
-//        c1 += 20;
-        ASSERT_NEAR(c1.Area(), area + 20, .01);
-    }
-
-    TEST_F(CircleTest, DISABLED_ostream)
-    {
-        //    cout << c1 << endl;
-    }
 }

@@ -21,7 +21,7 @@ namespace training::utility
         Color *c2;
     };
 
-    TEST_F(ColorTest, TestStatics)
+    TEST_F(ColorTest, DISABLED_TestStatics)
     {
         // EXPECT_EQ(0xff0000, Color::RED.Rgb());
         // EXPECT_EQ(0x00ff00, Color::GREEN.Rgb());

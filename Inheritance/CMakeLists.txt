@@ -1,28 +1,37 @@
-cmake_minimum_required(VERSION 3.14)
-cmake_policy(SET CMP0115 NEW)
-project(Inheritance)
-
-# For Windows: Prevent overriding the parent project's compiler/linker settings
-set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-
-#enable_testing()
 
 
-add_executable(
-  Inheritance
+set (this Inheritance)
+
+set (headers
+  Circle.h
+  Color.h
+  Rectangle.h
+  LinkedList.h
+)
+
+set(sources 
   Color.cpp
-  Rectangle.cpp
   Circle.cpp
+  Rectangle.cpp
+)
+
+set (tests
   Tests/ColorTest.cpp
   Tests/CircleTest.cpp
   Tests/RectangleTest.cpp
   Tests/LandscapeTest.cpp
 )
 
-target_link_libraries(
-  Inheritance
-  GTest::gtest_main
+project(${this})
+
+add_library (lib${this} STATIC ${sources} ${headers})
+
+add_executable(${this} ${tests})
+
+target_link_libraries(${this} PUBLIC
+    gtest_main
+    lib${this}
 )
 
-include(GoogleTest)
-
+include (GoogleTest)
+gtest_discover_tests(${this})

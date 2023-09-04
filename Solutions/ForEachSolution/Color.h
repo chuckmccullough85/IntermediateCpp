@@ -14,26 +14,17 @@ namespace training::utility
         static Color BLACK;
 
         Color(int rgb = 0) { this->rgb = rgb; }
-        Color(unsigned r, unsigned g, unsigned b) { rgb = (r << 16) | (g << 8) | b; }
+        Color(unsigned r, unsigned g, unsigned b) 
+        {
+            check_color(r);
+            check_color(g);
+            check_color(b);
+            rgb = (r << 16) | (g << 8) | b;
+        }
         unsigned Red() const { return (rgb & 0xff0000) >> 16; }
         unsigned Green() const { return (rgb & 0xff00) >> 8; }
         unsigned Blue() const { return rgb & 0xff; }
 
-        void SetRed(int v)
-        {
-            check_color(v);
-            rgb = v << 16 | Green() | Blue();
-        }
-        void SetGreen(int v)
-        {
-            check_color(v);
-            rgb = v << 8 | Red() | Blue();
-        }
-        void SetBlue(int v)
-        {
-            check_color(v);
-            rgb = v  | Green() | Red();
-        }
 
         unsigned Rgb() const { return rgb; }
 

@@ -58,52 +58,5 @@ There are multiple projects in the workspace.  The current target to run is show
 
 ![VSCodeBuildBar.jpg](./images/VSCodeBuildBar.jpg)
 
-## Adding Projects
-To add a new project, create a new folder under the *IntermediateCpp* folder.  
 
-If the project is using *Google Test*, copy the *CMakeLists.txt* file from the *GoogleTestProject* folder to the new folder.
-
-If the project is a console application, copy the *CMakeLists.txt* file from the *ConsoleAppProject* folder to the new folder.
-
-Modify *CMakeLists.txt* in the new folder to change the project name and add source files.  
-
-  Note - the *Target* may appear in several places in the *CMakeLists.txt* file.  Change the target name in all places.  The build will fail if there are multiple targets with the same name.
-
-```
-project(new_name)
-```
-Add source files to the source list (note - the first item in the list is the build target):
-
-```
-add_executable(
-  capp
-  main.cpp
-)
-```
-
-### Google Test Project Cmake template
-```cmake
-cmake_minimum_required(VERSION 3.14)
-cmake_policy(SET CMP0115 NEW)
-##### CHANGE THIS TO THE NAME OF YOUR PROJECT #####
-project(GTestTemplate)
-
-# For Windows: Prevent overriding the parent project's compiler/linker settings
-set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-
-enable_testing()
-
-add_executable(
-  GTestTemplate ### <--- Change this to a unique target name!!! ####
-  Tests/Sample.cpp ### <--- Add your source files here ####
-)
-
-target_link_libraries(
-  GTestTemplate  ### <--- Change this to the target name!!! (same as above) ####
-  GTest::gtest_main
-)
-
-include(GoogleTest)
-gtest_discover_tests(GTestTemplate)  ### <--- Change this to the target name!!! (same as above) ####
-```
 

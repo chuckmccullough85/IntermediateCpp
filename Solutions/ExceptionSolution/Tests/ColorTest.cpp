@@ -53,14 +53,14 @@ namespace training::utility::tests
 
     TEST_F(ColorTest, InvalidRed) 
     {
-        ASSERT_THROW(c1.SetRed(-5), std::invalid_argument);
+        ASSERT_THROW(Color(-5,0,0), std::invalid_argument);
     }
     TEST_F(ColorTest, InvalidGreen)
     {
-        ASSERT_THROW(c1.SetGreen(-5), std::invalid_argument);
+        ASSERT_THROW(Color(0,-5,0), std::invalid_argument);
     }
     TEST_F(ColorTest, InvalidBlue)
     {
-        ASSERT_THROW(c1.SetBlue(270), std::invalid_argument);
+        ASSERT_THROW(Color(0,0,270), std::invalid_argument);
     }
 }

@@ -1,27 +1,37 @@
-cmake_minimum_required(VERSION 3.14)
-cmake_policy(SET CMP0115 NEW)
-project(TemplateSolution)
 
-# For Windows: Prevent overriding the parent project's compiler/linker settings
-set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 
-#enable_testing()
+set (this TemplatesSolution)
 
-add_executable(
-  TemplateSolution
+set (headers
+  Circle.h
+  Color.h
+  Rectangle.h
+  LinkedList.h
+)
+
+set(sources 
   Color.cpp
   Circle.cpp
   Rectangle.cpp
-  linked_list.cpp
+)
+
+set (tests
   Tests/ColorTest.cpp
   Tests/CircleTest.cpp
   Tests/RectangleTest.cpp
   Tests/LandscapeTest.cpp
 )
 
-target_link_libraries(
-  TemplateSolution
-  GTest::gtest_main
+project(${this})
+
+add_library (lib${this} STATIC ${sources} ${headers})
+
+add_executable(${this} ${tests})
+
+target_link_libraries(${this} PUBLIC
+    gtest_main
+    lib${this}
 )
 
-include(GoogleTest)
+include (GoogleTest)
+gtest_discover_tests(${this})

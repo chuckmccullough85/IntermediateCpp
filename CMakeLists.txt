@@ -1,25 +1,20 @@
-cmake_minimum_required(VERSION 3.14)
+cmake_minimum_required(VERSION 3.2)
 
 IF(WIN32)
 cmake_policy(SET CMP0135 NEW)
 ENDIF()
 
 cmake_policy(SET CMP0115 NEW)
-project(Labs)
+project(Labs CXX)
 
-# GoogleTest requires at least C++14
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-include(FetchContent)
-FetchContent_Declare(
-  googletest
-  URL https://github.com/google/googletest/archive/7e33b6a1c497ced1e98fc60175aeb4678419281c.zip
-)
-FetchContent_MakeAvailable(googletest)
 
 # For Windows: Prevent overriding the parent project's compiler/linker settings
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+
+enable_testing()
 
 # As you proceed through the course, uncomment the appropriate add_subdirectory() commands
 # to add the labs to the build.
@@ -29,9 +24,9 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 # Currently, VS Code is set to auto save after a few seconds.  When a cmake file is saved,
 # it will trigger a reconfiguration of the makefiles.
 
-add_subdirectory(Landscaping)
 add_subdirectory(ConsoleAppProject)
 add_subdirectory(GoogleTestProject)
+add_subdirectory(Landscaping)
 add_subdirectory(FunctionsPointers)
 add_subdirectory(Namespaces)
 add_subdirectory(Strings)
@@ -65,3 +60,5 @@ add_subdirectory(Solutions/InterfaceSolution)
 add_subdirectory(Solutions/ExceptionSolution)
 add_subdirectory(Solutions/ContainerSolution)
 add_subdirectory(Solutions/ForEachSolution)
+add_subdirectory(Solutions/ThreadsSolution)
+add_subdirectory(Solutions/TasksSolution)

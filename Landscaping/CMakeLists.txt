@@ -1,26 +1,37 @@
-cmake_minimum_required(VERSION 3.14)
-cmake_policy(SET CMP0115 NEW)
-project(Landscaping)
+set (this Landscaping)
 
-# For Windows: Prevent overriding the parent project's compiler/linker settings
-set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+set (headers
+  Circle.h
+  Color.h
+  Rectangle.h
+  NotImplementedException.h
+)
 
-enable_testing()
-
-add_executable(
-  Landscaping
+set(sources 
   Color.cpp
   Circle.cpp
   Rectangle.cpp
+)
+
+set (tests
   Tests/ColorTest.cpp
   Tests/CircleTest.cpp
   Tests/RectangleTest.cpp
 )
 
-target_link_libraries(
-  Landscaping
-  GTest::gtest_main
+project(${this})
+
+add_library (lib${this} STATIC ${sources} ${headers})
+
+add_executable(${this} ${tests})
+
+target_link_libraries(${this} PUBLIC
+    gtest_main
+    lib${this}
 )
 
-include(GoogleTest)
-gtest_discover_tests(Landscaping)
+include (GoogleTest)
+
+gtest_discover_tests(${this})
+
+

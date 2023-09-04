@@ -1,18 +1,39 @@
-cmake_minimum_required(VERSION 3.14)
-cmake_policy(SET CMP0115 NEW)
-project(GoogleTestProject)
+set (this GoogleTestProject)
 
-# For Windows: Prevent overriding the parent project's compiler/linker settings
-set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-
-add_executable(
-  GoogleTestProject
-  Tests/Sample.cpp
+set (headers
+#list headers here
+mycode.h
 )
 
-target_link_libraries(
-  GoogleTestProject
-  GTest::gtest_main
+set(sources 
+#list cpp here
+mycode.cpp
+)
+set (tests
+Tests/Sample.cpp
+
 )
 
-include(GoogleTest)
+project(${this})
+
+include(FetchContent)
+FetchContent_Declare(
+  googletest
+  URL https://github.com/google/googletest/archive/7e33b6a1c497ced1e98fc60175aeb4678419281c.zip
+)
+FetchContent_MakeAvailable(googletest)
+
+
+
+
+add_library (lib${this} STATIC ${sources} ${headers})
+
+add_executable(${this} ${tests})
+
+target_link_libraries(${this} PUBLIC
+    gtest_main
+    lib${this}
+)
+
+include (GoogleTest)
+gtest_discover_tests(${this})
