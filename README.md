@@ -1,24 +1,33 @@
 # IntermediateCpp
-This repository contains the code for the course Intermediate C++ by Chuck McCullough.  This material is for the exclusive use of the students of the course.  Please do not distribute this material. Copyright 2023 Chuck McCullough.
+This repository contains the code for the course Intermediate C++ by Chuck McCullough.  This material is for the exclusive use of the students of the course.  Please do not distribute this material. Copyright 2024 Chuck McCullough.
 
-## Using this repository
-
-If you are using the Remote Learning System (RLS), the repository has already been downloaded and installed on the RLS.  You can skip to the section on Visual Studio Code.  If you are using your own computer, you can download the repository from GitHub as a zip file or you can download the repository using git.  See the section on Git for more information.
-
-This repository requires a C++ compiler compatible with C++20. The code was tested with MSVC and G++.  
-
-The student will need any of these compilers to build the code:
-
-Windows:
-* Visual Studio 2022 with the C++ workload
-* MSVC developer kit 
-* Clang
-
-Linux:
-* GCC 
-* Clang
-
-Other compilers may work but have not been tested.
+## Table of Contents
+- [First Classes](Landscaping)
+- [Functions & Pointers](FunctionsPointers)
+- [Namespaces](Namespaces)
+- [Strings](Strings)
+- [Streams](Streams)
+- [Statics](Statics)
+- [Memory](Memory)
+- [LinkedList](LinkedList)
+- [Templates](Templates)
+- [Templates20](Templates20)
+- [Operator Overloading](OperatorOverloading)
+- [Smart Pointers](SmartPointers)
+- [Move Semantics](MoveSemantics)
+- [Inheritance](Inheritance)
+- [Interfaces](Interfaces)
+- [Exceptions](Exceptions)
+- [Containers](Containers)
+- [Functional Programming](MenuSystemStarter)
+- [Functional Programming with Function Pointers](MenuSystemFunctionPtr)
+- [Functional Programming with Interfaces](MenuSystemInterface)
+- [Functional Programming with Functor](MenuSystemFunctor)
+- [Functional Programming with Lambdas](MenuSystemLambda)
+- [ForEach with Lambdas](ForEach)
+- [Accumulate with Lambdas](Accumulate)
+- [Threads](Threads)
+- [Tasks](Tasks)
 
 ## Building the code
 The source includes *CMakeLists.txt* which is used by CMAKE to create makefiles for the projects.  The student can use CMAKE to create the makefiles and then use the makefiles to build the code.  
@@ -56,7 +65,7 @@ Once the extension are installed, the bottom toolbar will show CMAKE commands.  
 
 There are multiple projects in the workspace.  The current target to run is shown to the right of the run/debug buttons.  You can change the target by clicking on the target and choosing a different target.  
 
-![VSCodeBuildBar.jpg](./images/VSCodeBuildBar.jpg)
+![VSCodeBuildBar.jpg](images/VSCodeBuildBar.jpg)
 
 
 
