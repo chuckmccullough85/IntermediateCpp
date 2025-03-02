@@ -1,15 +1,10 @@
-set (this Strings)
-set (headers
-  #list headers here
-)
+get_filename_component(ProjectName ${CMAKE_CURRENT_SOURCE_DIR} NAME)
+string(REPLACE " " "_" ProjectName ${ProjectName})
 
-set(sources 
-  main.cpp
-)
+project(${ProjectName} VERSION 1.0 LANGUAGES CXX)
 
-project(${this})
+file(GLOB sources CONFIGURE_DEPENDS "*.cpp")
+file(GLOB headers CONFIGURE_DEPENDS "*.h")
 
-add_executable(
-  ${this}
-  ${sources} ${headers}
-)
+add_executable(${ProjectName} ${sources} ${headers})
+

@@ -1,16 +1,10 @@
-set (this MenuAppFunctor)
-set (headers
-  Menu.h
-)
+get_filename_component(ProjectName ${CMAKE_CURRENT_SOURCE_DIR} NAME)
+string(REPLACE " " "_" ProjectName ${ProjectName})
 
-set(sources 
-  Menu.cpp
-  MenuApp.cpp
-)
+project(${ProjectName} VERSION 1.0 LANGUAGES CXX)
 
-project(${this})
+file(GLOB sources CONFIGURE_DEPENDS "*.cpp")
+file(GLOB headers CONFIGURE_DEPENDS "*.h")
 
-add_executable(
-  ${this}
-  ${sources} ${headers}
-)
+add_executable(${ProjectName} ${sources} ${headers})
+

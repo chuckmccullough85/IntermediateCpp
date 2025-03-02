@@ -1,37 +1,20 @@
-set (this Landscaping)
+get_filename_component(ProjectName ${CMAKE_CURRENT_SOURCE_DIR} NAME)
+string(REPLACE " " "_" ProjectName ${ProjectName})
 
-set (headers
-  Circle.h
-  Color.h
-  Rectangle.h
-  NotImplementedException.h
-)
+project(${ProjectName} VERSION 1.0 LANGUAGES CXX)
 
-set(sources 
-  Color.cpp
-  Circle.cpp
-  Rectangle.cpp
-)
+file(GLOB sources CONFIGURE_DEPENDS "*.cpp")
+file(GLOB headers CONFIGURE_DEPENDS "*.h")
+file(GLOB tests CONFIGURE_DEPENDS "Tests/*.cpp")
 
-set (tests
-  Tests/ColorTest.cpp
-  Tests/CircleTest.cpp
-  Tests/RectangleTest.cpp
-)
+add_library (lib${ProjectName} STATIC ${sources} ${headers})
 
-project(${this})
+add_executable(${ProjectName} ${tests})
 
-add_library (lib${this} STATIC ${sources} ${headers})
-
-add_executable(${this} ${tests})
-
-target_link_libraries(${this} PUBLIC
+target_link_libraries(${ProjectName} PUBLIC
     gtest_main
-    lib${this}
+    lib${ProjectName}
 )
 
 include (GoogleTest)
-
-gtest_discover_tests(${this})
-
-
+gtest_discover_tests(${ProjectName})

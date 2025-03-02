@@ -17,7 +17,7 @@ namespace training::geometry::tests
             c1.SetColor(color);
             c1.SetRadius(radius);
         }
-        double radius = 10;
+        float radius = 10.0f;
         std::string name;
         Color color;
         Circle c1;

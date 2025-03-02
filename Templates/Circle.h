@@ -7,11 +7,11 @@ namespace training::geometry
 {
 	using namespace training::utility;
 
-	constexpr double PI = 3.141592653589;
+	constexpr float PI = 3.141592653589f;
 	class Circle
 	{
 	public:
-		Circle() {}
+		Circle() : radius(0) {}
 
 		Circle(float radius, std::string name, Color color)
 			:color(color), name(name)

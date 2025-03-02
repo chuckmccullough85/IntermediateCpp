@@ -19,7 +19,8 @@ project(${this})
 include(FetchContent)
 FetchContent_Declare(
   googletest
-  URL https://github.com/google/googletest/archive/7e33b6a1c497ced1e98fc60175aeb4678419281c.zip
+  GIT_REPOSITORY https://github.com/google/googletest.git
+  GIT_TAG        24a9e940d481f992ba852599c78bb2217362847b
 )
 FetchContent_MakeAvailable(googletest)
 

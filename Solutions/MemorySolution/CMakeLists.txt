@@ -1,36 +1,20 @@
+get_filename_component(ProjectName ${CMAKE_CURRENT_SOURCE_DIR} NAME)
+string(REPLACE " " "_" ProjectName ${ProjectName})
 
+project(${ProjectName} VERSION 1.0 LANGUAGES CXX)
 
-set (this MemorySolution)
+file(GLOB sources CONFIGURE_DEPENDS "*.cpp")
+file(GLOB headers CONFIGURE_DEPENDS "*.h")
+file(GLOB tests CONFIGURE_DEPENDS "Tests/*.cpp")
 
-set (headers
-  Circle.h
-  Color.h
-  Rectangle.h
-)
+add_library (lib${ProjectName} STATIC ${sources} ${headers})
 
-set(sources 
-  Color.cpp
-  Circle.cpp
-  Rectangle.cpp
-)
+add_executable(${ProjectName} ${tests})
 
-set (tests
-  Tests/ColorTest.cpp
-  Tests/CircleTest.cpp
-  Tests/RectangleTest.cpp
-  Tests/LandscapeTest.cpp
-)
-
-project(${this})
-
-add_library (lib${this} STATIC ${sources} ${headers})
-
-add_executable(${this} ${tests})
-
-target_link_libraries(${this} PUBLIC
+target_link_libraries(${ProjectName} PUBLIC
     gtest_main
-    lib${this}
+    lib${ProjectName}
 )
 
 include (GoogleTest)
-gtest_discover_tests(${this})
+gtest_discover_tests(${ProjectName})
