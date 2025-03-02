@@ -1,5 +1,5 @@
 # IntermediateCpp
-This repository contains the code for the course Intermediate C++ by Chuck McCullough.  This material is for the exclusive use of the students of the course.  Please do not distribute this material. Copyright 2024 Chuck McCullough.
+This repository contains the code for the course Intermediate C++ by Chuck McCullough.  This material is for the exclusive use of the students of the course.  Please do not distribute this material. Copyright 2025 Chuck McCullough.
 
 ## Table of Contents
 - [First Classes](Landscaping)
@@ -37,12 +37,11 @@ Visit (cmake.org)[https://cmake.org] for more information on CMAKE.  Install cma
 
 Visual Studio Code is a language neutral, platform neutral IDE.  With plugins, many of the build tasks are automated.
 
-If you are using our Remote Learning System **(RLS)**, Visual Studio Code is already installed.  If you are using your own computer, you can download Visual Studio Code from (code.visualstudio.com)[https://code.visualstudio.com]. Visual Studio Code is free.
+You can download Visual Studio Code from (code.visualstudio.com)[https://code.visualstudio.com]. Visual Studio Code is free.
 
 We use the following extensions in Visual Studio Code:
 * C/C++ by Microsoft
 * C/C++ Extension Pack by Microsoft
-* CMake by twxs
 * CMake Tools by Microsoft
 
 ## Git
@@ -61,7 +60,7 @@ Open VS Code and open the *IntermediateCpp* folder (under c:/Studentwork).  If o
 
 If you have not installed the recommended extensions to VS Code, you will be prompted to install them.  Install the recommended extensions.  Yuo may need to restart VS Code after installing the extensions.
 
-Once the extension are installed, the bottom toolbar will show CMAKE commands.  On the RLS, the Microsoft compiler has been configured.  On you own system, you will need to click the toolkit to choose an available compiler on your system.
+Once the extension are installed, the bottom toolbar will show CMAKE commands. You will need to click the toolkit to choose an available compiler on your system.
 
 There are multiple projects in the workspace.  The current target to run is shown to the right of the run/debug buttons.  You can change the target by clicking on the target and choosing a different target.  
 
